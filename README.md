@@ -40,6 +40,14 @@ Jouster/
    python manage.py makemigrations
    python manage.py migrate
    ```
+
+## Environment Variables
+- Set your LLM API keys in `.env` (not included in repo):
+  ```
+  OPENAI_API_KEY=...
+  GEMINI_API_KEY=...
+  ```
+
 5. Start the server:
    ```sh
    python manage.py runserver
@@ -51,12 +59,7 @@ Jouster/
   - `engine`: (optional) 'openai' or 'gemini'
 - **Response**: JSON with summary and keywords
 
-## Environment Variables
-- Set your LLM API keys in `.env` (not included in repo):
-  ```
-  OPENAI_API_KEY=...
-  GEMINI_API_KEY=...
-  ```
+
 
 ## Notes
 - The Docker build creates a Python venv, installs all dependencies, downloads the spaCy model, runs migrations, and starts Django on port 9000.
