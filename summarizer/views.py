@@ -48,15 +48,10 @@ def call_gemini_api(prompt):
     gemini_content = response.json()
     import json, re
     raw_text = gemini_content['candidates'][0]['content']['parts'][0]['text']
-    print('----')
-    print(raw_text)
-    print('----')
     raw_text = re.sub('json','',raw_text)
     raw_text = re.sub("```",'',raw_text)
     try:
         result = json.loads(raw_text)
-        print(result)
-        print(result.get('title', ''))
     except Exception:
         result = parse_llm_response_with_regex(raw_text)  # for Gemini
 
@@ -73,9 +68,6 @@ def call_openai_api(prompt):
             messages=[{"role": "user", "content": prompt}]
         )
         openai_text = response.choices[0].message.content
-        print('----')
-        print(openai_text)
-        print('----')
         try:
             result = json.loads(openai_text)
         except Exception:
