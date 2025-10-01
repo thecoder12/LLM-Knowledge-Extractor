@@ -56,7 +56,7 @@ Jouster/
 ## API Usage
 - **POST /summarize/**
   - `text`: Text to summarize
-  - `engine`: (optional) 'openai' or 'gemini'
+  - `engine`: (optional) 'openai' or 'gemini'(default). For openai `?engine=openai`
 - **Response**: JSON with summary and keywords
 
 
