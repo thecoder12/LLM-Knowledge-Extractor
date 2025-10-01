@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Summarizer</title>
+</head>
+<body>
+    <h1>Text Summarizer</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="text" rows="10" cols="80" placeholder="Paste your article, blog post, or update here..."></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+    <a href="{% url 'history' %}">View Past Analyses</a>
+</body>
+</html>

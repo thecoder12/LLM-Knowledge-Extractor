@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+</head>
+<body>
+    <h1>Analysis Result</h1>
+    <pre>{{ analysis|safe }}</pre>
+    <ul>
+        <li><strong>Title:</strong> {{ analysis.title }}</li>
+        <li><strong>Topics:</strong> {{ analysis.topics }}</li>
+        <li><strong>Sentiment:</strong> {{ analysis.sentiment }}</li>
+        <li><strong>Keywords:</strong> {{ analysis.keywords }}</li>
+        <li><strong>Summary:</strong> {{ analysis.summary }}</li>
+    </ul>
+    <a href="{% url 'home' %}">Analyze Another</a>
+    <a href="{% url 'history' %}">View Past Analyses</a>
+</body>
+</html>

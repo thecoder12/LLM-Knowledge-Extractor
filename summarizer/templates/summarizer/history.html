@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Past Analyses</title>
+</head>
+<body>
+    <h1>Past Analyses</h1>
+    <ul>
+        {% for analysis in analyses %}
+        <li>
+            <strong>{{ analysis.title }}</strong> ({{ analysis.created_at }})<br>
+            Topics: {{ analysis.topics }}<br>
+            Sentiment: {{ analysis.sentiment }}<br>
+            Keywords: {{ analysis.keywords }}<br>
+            <hr>
+        </li>
+        {% empty %}
+        <li>No analyses found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Analyze New Text</a>
+</body>
+</html>
